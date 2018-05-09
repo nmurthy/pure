@@ -70,7 +70,7 @@ prompt_pure_set_title() {
 	# tell the terminal we are setting the title
 	print -n '\e]0;'
 	# show hostname if connected through ssh
-	[[ -n $SSH_CONNECTION ]] && print -Pn '(%F{196}%m%f) '
+	[[ -n $SSH_CONNECTION ]] && print -Pn '(%m) '
 	case $1 in
 		expand-prompt)
 			print -Pn $2;;
@@ -187,7 +187,7 @@ prompt_pure_render_vcs() {
 
 prompt_pure_render_hostname() {
 	# username and machine if applicable
-	[[ -n $prompt_pure_hostname ]] && preprompt+=($prompt_pure_hostname)
+	[[ -n $prompt_pure_hostname ]] && preprompt+=("%F{196}$prompt_pure_hostname%f")
 }
 
 prompt_pure_render_exec_time() {
