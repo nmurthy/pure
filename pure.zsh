@@ -70,7 +70,7 @@ prompt_pure_set_title() {
 	# tell the terminal we are setting the title
 	print -n '\e]0;'
 	# show hostname if connected through ssh
-	[[ -n $SSH_CONNECTION ]] && print -Pn '%F{red}(%m)%f '
+	[[ -n $SSH_CONNECTION ]] && print -Pn '%F{196}(%m)%f '
 	case $1 in
 		expand-prompt)
 			print -Pn $2;;
