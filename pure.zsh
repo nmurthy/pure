@@ -725,7 +725,7 @@ prompt_pure_setup() {
 	# show username@host if logged in through SSH or if forced
 	if [[ -n $SSH_CONNECTION ]]; then
 		# ssh: green
-		prompt_pure_hostname='@%F{green}%m%f'
+		prompt_pure_hostname='@%F{red}%m%f'
 	elif (( ${PURE_ALWAYS_SHOW_USER:-0} )); then
 		# normal: secondary (base01 = 10)
 		prompt_pure_hostname='@%F{10}%m%f'
